@@ -39,6 +39,7 @@ To use `TIStoryView` in your SwiftUI project, follow these steps:
 4. Customize the appearance of the loader by modifying the `gradient` and `dash` properties in the initializer.
 
 ## Example
+![example](https://github.com/tiskender2/TIStoryView/assets/17899883/27f98308-8c33-4b82-b684-9f267af9ce56)
 
 Here's an example of how you can use `TIStoryView` in your SwiftUI view:
 
@@ -46,7 +47,8 @@ Here's an example of how you can use `TIStoryView` in your SwiftUI view:
 import SwiftUI
 
 struct ContentView: View {
-    @State private var isAnimating = false
+    @State private var isAnimating = false![13c5a9a1-e19c-4f4f-8bbf-58841e4eb083](https://github.com/tiskender2/TIStoryView/assets/17899883/f20128a2-9bc9-4fdf-9ead-48590efdbd1d)
+
 
     var body: some View {
         TIStoryView(

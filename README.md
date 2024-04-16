@@ -26,12 +26,6 @@ To use `TIStoryView` in your SwiftUI project, follow these steps:
     )
     ```
 
-3. Use the `isAnimating` binding to control the loader animation. When `isAnimating` is set to `true`, the loader will animate. You can change the value of `isAnimating` to start or stop the animation.
-
-    ```swift
-    @State private var isAnimating = false
-    ```
-
 4. Customize the appearance of the loader by modifying the `gradient` and `dash` properties in the initializer.
 
 ## Example

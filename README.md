@@ -50,7 +50,6 @@ import SwiftUI
 struct ContentView: View {
     @State private var isAnimating = false
 
-
     var body: some View {
         TIStoryView(
             url: URL(string: "https://example.com/image.jpg"),

@@ -60,7 +60,7 @@ struct ContentView: View {
                 print("Tapped!")
             }
         )
-        .frame(width: 200, height: 200)
+        .frame(width: 64, height: 64)
     }
 }
 ```

@@ -8,6 +8,16 @@
 - Customize the loader's appearance with gradient colors and dash pattern
 - Tap gesture support with a callback action
 
+## Installation
+
+Use **Swift Package Manager**
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/tiskender2/TIStoryView.git", exact: "1.0")
+]
+```
+
 ## Usage
 
 To use `TIStoryView` in your SwiftUI project, follow these steps:

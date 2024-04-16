@@ -14,7 +14,7 @@ Use **Swift Package Manager**
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/tiskender2/TIStoryView.git", exact: "1.0")
+    .package(url: "https://github.com/tiskender2/TIStoryView.git", exact: "1.1")
 ]
 ```
 

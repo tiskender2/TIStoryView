@@ -22,8 +22,7 @@ dependencies: [
 
 To use `TIStoryView` in your SwiftUI project, follow these steps:
 
-1. **Add the `TIStoryView.swift` file to your project**.
-2. Create an instance of `TIStoryView` in your SwiftUI view hierarchy and pass the necessary parameters, such as the image URL, gradient colors, and tap action.
+1. Create an instance of `TIStoryView` in your SwiftUI view hierarchy and pass the necessary parameters, such as the image URL, gradient colors, and tap action.
 
     ```swift
     TIStoryView(
@@ -36,7 +35,7 @@ To use `TIStoryView` in your SwiftUI project, follow these steps:
     )
     ```
 
-4. Customize the appearance of the loader by modifying the `gradient` and `dash` properties in the initializer.
+2. Customize the appearance of the loader by modifying the `gradient` and `dash` properties in the initializer.
 
 ## Example
 ![example](https://github.com/tiskender2/TIStoryView/assets/17899883/f4ba3db9-6354-43b8-8e32-acabec6a4aa2)

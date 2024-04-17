@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-public struct TIStoryView: View {
+public struct TIStoryView<Placeholder: View>: View {
     private var url: URL?
     private var dash: [CGFloat]
     private var gradient: Gradient = .init(
@@ -28,18 +28,22 @@ public struct TIStoryView: View {
     @State private var isAnimated: Bool = false
     @Binding private var isAnimating: Bool
 
+    @ViewBuilder private var placeholder: () -> Placeholder?
+
     public var tapAction: () -> Void
 
     public init(
         url: URL?, 
         dash: [CGFloat] = [],
         isAnimating: Binding<Bool>,
-        tapAction: @escaping () -> Void
+        tapAction: @escaping () -> Void,
+        @ViewBuilder placeholder: @escaping () -> Placeholder? = { EmptyView() }
     ) {
         self.url = url
         self.dash = dash
         self._isAnimating = isAnimating
         self.tapAction = tapAction
+        self.placeholder = placeholder
     }
 
     public init(
@@ -47,16 +51,23 @@ public struct TIStoryView: View {
         dash: [CGFloat] = [],
         gradient: Gradient,
         isAnimating: Binding<Bool>,
-        tapAction: @escaping () -> Void
+        tapAction: @escaping () -> Void,
+        @ViewBuilder placeholder: @escaping () -> Placeholder? = { EmptyView() }
     ) {
-        self.init(url: url, dash: dash, isAnimating: isAnimating, tapAction: tapAction)
+        self.init(
+            url: url,
+            dash: dash,
+            isAnimating: isAnimating,
+            tapAction: tapAction,
+            placeholder: placeholder
+        )
         self.gradient = gradient
     }
 
     public var body: some View {
         GeometryReader { geo in
             ZStack {
-                CachedAsyncImage(url: url)
+                CachedAsyncImage(url: url, placeholder: placeholder)
                 .frame(width: geo.size.width, height: geo.size.height)
                 .clipShape(.circle)
                 Circle()
@@ -69,7 +80,6 @@ public struct TIStoryView: View {
                         ),
                         style: .init(lineWidth: 2, lineCap: .round, dash: dash)
                     )
-                    .foregroundStyle(.red)
                     .frame(width: geo.size.width + 4, height: geo.size.height + 4)
                     .rotationEffect(rotationDegree)
             }

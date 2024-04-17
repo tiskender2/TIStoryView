@@ -56,9 +56,7 @@ public struct TIStoryView: View {
     public var body: some View {
         GeometryReader { geo in
             ZStack {
-                AsyncImage(url: url) {
-                    $0.image?.resizable()
-                }
+                CachedAsyncImage(url: url)
                 .frame(width: geo.size.width, height: geo.size.height)
                 .clipShape(.circle)
                 Circle()
